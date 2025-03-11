@@ -40,7 +40,7 @@ const BusinessCard = ({ name, description, url, index }: BusinessCardProps) => {
           {isAccInsurance ? (
             <div 
               className={cn(
-                "w-12 h-12 flex items-center justify-center rounded-lg overflow-hidden",
+                "w-14 h-14 flex items-center justify-center rounded-lg overflow-hidden",
                 "bg-gray-800", // Dark background to make the white logo visible
                 "transition-all duration-500",
                 isHovered ? "scale-110" : "scale-100"
@@ -49,13 +49,13 @@ const BusinessCard = ({ name, description, url, index }: BusinessCardProps) => {
               <img 
                 src="https://www.accinsco.com/wp-content/uploads/2022/08/logo.svg" 
                 alt="ACC Insurance Logo" 
-                className="w-10 h-10 object-contain p-1"
+                className="w-12 h-12 object-contain p-1"
               />
             </div>
           ) : isInvopeo ? (
             <div 
               className={cn(
-                "w-12 h-12 flex items-center justify-center rounded-lg overflow-hidden",
+                "w-14 h-14 flex items-center justify-center rounded-lg overflow-hidden",
                 "bg-white", // White background for Invopeo logo
                 "transition-all duration-500",
                 isHovered ? "scale-110" : "scale-100"
@@ -64,13 +64,13 @@ const BusinessCard = ({ name, description, url, index }: BusinessCardProps) => {
               <img 
                 src="https://sp-ao.shortpixel.ai/client/to_webp,q_glossy,ret_img/https://invopeo.com/wp-content/uploads/2019/07/INVO-PEO-logo-final.png" 
                 alt="Invopeo Logo" 
-                className="w-10 h-10 object-contain p-1"
+                className="w-12 h-12 object-contain p-1"
               />
             </div>
           ) : (
             <div 
               className={cn(
-                "w-12 h-12 flex items-center justify-center rounded-lg text-white font-bold text-xl bg-navy",
+                "w-14 h-14 flex items-center justify-center rounded-lg text-white font-bold text-2xl bg-navy",
                 "transition-all duration-500",
                 isHovered ? "scale-110" : "scale-100"
               )}
