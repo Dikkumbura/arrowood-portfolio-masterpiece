@@ -16,6 +16,9 @@ const BusinessCard = ({ name, description, url, index }: BusinessCardProps) => {
   // Extract domain name without protocol and www
   const domain = url.replace(/(https?:\/\/)?(www\.)?/, '');
 
+  // Check if it's ACC Insurance to show the logo
+  const isAccInsurance = name === "ACC Insurance";
+
   return (
     <a
       href={url}
@@ -33,15 +36,31 @@ const BusinessCard = ({ name, description, url, index }: BusinessCardProps) => {
       
       <div className="p-6 relative z-10">
         <div className="flex justify-between items-start mb-4">
-          <div 
-            className={cn(
-              "w-12 h-12 flex items-center justify-center rounded-lg text-white font-bold text-xl bg-navy",
-              "transition-all duration-500",
-              isHovered ? "scale-110" : "scale-100"
-            )}
-          >
-            {name.charAt(0)}
-          </div>
+          {isAccInsurance ? (
+            <div 
+              className={cn(
+                "w-12 h-12 flex items-center justify-center rounded-lg overflow-hidden bg-white",
+                "transition-all duration-500",
+                isHovered ? "scale-110" : "scale-100"
+              )}
+            >
+              <img 
+                src="https://www.accinsco.com/wp-content/uploads/2022/08/logo.svg" 
+                alt="ACC Insurance Logo" 
+                className="w-full h-full object-contain"
+              />
+            </div>
+          ) : (
+            <div 
+              className={cn(
+                "w-12 h-12 flex items-center justify-center rounded-lg text-white font-bold text-xl bg-navy",
+                "transition-all duration-500",
+                isHovered ? "scale-110" : "scale-100"
+              )}
+            >
+              {name.charAt(0)}
+            </div>
+          )}
           <ExternalLink 
             className={cn(
               "text-navy/50 transition-all duration-300",
