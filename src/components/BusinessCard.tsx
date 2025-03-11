@@ -16,8 +16,9 @@ const BusinessCard = ({ name, description, url, index }: BusinessCardProps) => {
   // Extract domain name without protocol and www
   const domain = url.replace(/(https?:\/\/)?(www\.)?/, '');
 
-  // Check if it's ACC Insurance to show the logo
+  // Check if it's ACC Insurance or Invopeo to show their logos
   const isAccInsurance = name === "ACC Insurance";
+  const isInvopeo = name === "Invopeo";
 
   return (
     <a
@@ -48,6 +49,21 @@ const BusinessCard = ({ name, description, url, index }: BusinessCardProps) => {
               <img 
                 src="https://www.accinsco.com/wp-content/uploads/2022/08/logo.svg" 
                 alt="ACC Insurance Logo" 
+                className="w-10 h-10 object-contain p-1"
+              />
+            </div>
+          ) : isInvopeo ? (
+            <div 
+              className={cn(
+                "w-12 h-12 flex items-center justify-center rounded-lg overflow-hidden",
+                "bg-white", // White background for Invopeo logo
+                "transition-all duration-500",
+                isHovered ? "scale-110" : "scale-100"
+              )}
+            >
+              <img 
+                src="https://sp-ao.shortpixel.ai/client/to_webp,q_glossy,ret_img/https://invopeo.com/wp-content/uploads/2019/07/INVO-PEO-logo-final.png" 
+                alt="Invopeo Logo" 
                 className="w-10 h-10 object-contain p-1"
               />
             </div>
